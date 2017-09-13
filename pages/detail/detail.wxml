@@ -1,0 +1,144 @@
+<!-- 详情页 -->
+<import src="../../txcomponent/wxParse/wxParse.wxml" />
+
+<!--顶部-->
+<view>
+  <swiper class="lunbo" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{infoLnbo}}" wx:key="infoLunbo">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+    <text class="jieshao">{{brandInfo.AdWords}}</text>
+  </swiper>
+</view>
+
+<!-- 品牌信息 -->
+<view class="pp_info">
+  <text class="info_name">{{brandInfo.Name}}</text>
+  <text class="info_money">投资金额：<text>{{brandInfo.Invest}}</text></text>
+  <view class="info_address">
+    <image src="../image/brand/address.png"></image>
+    <text class="address"> {{brandInfo.ComAddress}}</text>
+  </view>
+  <view class="clear"></view>
+  <text class="info_zhizi">企业资质：</text>
+  <view class="info_tu">
+    <image src="../image/brand/bao.png"></image>
+    <image src="../image/brand/qi.png"></image>
+    <image src="../image/brand/zheng.png"></image>
+  </view>
+  <text class="info_md">{{brandInfo.StoreCount}} 家门店</text>
+  <view class="clear"></view>
+</view>
+
+<!-- 品牌介绍 -->
+<view class="pp_rec">
+  <text class="rec_tit">品牌介绍</text>
+  <text class="rec_zs">推荐指数：</text>
+  <image src="../image/brand/stars.png"></image>
+  <view class="con" style="max-height:{{conheight1}}">
+    <template is="wxParse" data="{{wxParseData:explain.nodes}}" />
+  </view>
+  <view class="c_more" bindtap="OpenOrClose1">
+    <image src="../image/brand/open.png" style="display:{{conopen1}}"></image>
+    <image src="../image/brand/close.png" style="display:{{conclose1}}"></image>
+  </view>
+</view>
+
+<!-- 加盟优势 -->
+<view class="pp_rec">
+  <text class="rec_tit">加盟优势</text>
+  <view class="con" style="max-height:{{conheight2}}">
+    <template is="wxParse" data="{{wxParseData:condition.nodes}}" />
+  </view>
+  <view class="c_more" bindtap="OpenOrClose2">
+    <image src="../image/brand/open.png" style="display:{{conopen2}}"></image>
+    <image src="../image/brand/close.png" style="display:{{conclose2}}"></image>
+  </view>
+</view>
+
+<!-- 加盟流程 -->
+<view class="pp_rec">
+  <text class="rec_tit">加盟流程</text>
+  <view class="con" style="max-height:{{conheight3}}">
+    <template is="wxParse" data="{{wxParseData:process.nodes}}" />
+  </view>
+  <view class="c_more" bindtap="OpenOrClose3">
+    <image src="../image/brand/open.png" style="display:{{conopen3}}"></image>
+    <image src="../image/brand/close.png" style="display:{{conclose3}}"></image>
+  </view>
+</view>
+
+<!-- 加盟费用 -->
+<view class="pp_rec">
+  <text class="rec_tit">加盟费用</text>
+  <view class="con" style="max-height:{{conheight4}}">
+    <template is="wxParse" data="{{wxParseData:fee.nodes}}" />
+  </view>
+  <view class="c_more" bindtap="OpenOrClose4">
+    <image src="../image/brand/open.png" style="display:{{conopen4}}"></image>
+    <image src="../image/brand/close.png" style="display:{{conclose4}}"></image>
+  </view>
+</view>
+
+<!-- 猜你喜欢 -->
+<view class="pp_rec">
+  <text class="rec_tit">猜你喜欢</text>
+  <view wx:for="{{likeList}}" wx:key="like" class="con_list">
+    <view bindtap="GoToDetail" data-id="{{item.BrandId}}">
+      <image src="{{item.SearchImg}}" class="slide-image" class="con_img" />
+      <view class="con_con">
+        <text class="c_name">{{item.BrandName}}</text>
+        <view class="yz_img">
+          <image src="../image/brandproperty/renzheng.png"></image>
+          <image class="hongbao_{{item.HaveHongbao}}" src="../image/brandproperty/hongbao.png"></image>
+          <image class="fanxian_{{item.HaveFanxian}}" src="../image/brandproperty/fanxian.png"></image>
+          <image class="refund_{{item.HaveRefund}}" src="../image/brandproperty/refund.png"></image>
+        </view>
+        <view class="clear"></view>
+        <text class="c_money">{{item.MiniAppsBrandInvest}}</text>
+        <text class="c_sum">{{item.BrandSummary}}</text>
+      </view>
+      <view class="clear"></view>
+    </view>
+  </view>
+</view>
+
+
+<!--弹窗-->
+<view wx:if="{{showModal}}" class="tanc">
+  <view class="kuang">
+    <view class="head">
+      <image src="../image/brand/tel.png"></image>
+      <text>无需话费，立即沟通</text>
+    </view>
+    <view>
+      <input type="number" maxlength="11" bindinput="InputMobile" placeholder="请输入您的手机号码"></input>
+    </view>
+    <view>
+      <view bindtap="onCancel" class="quxiao">取消</view>
+      <view bindtap="onConfirm" class="tijiao">提交</view>
+    </view>
+  </view>
+</view>
+
+<view class="mz_sm">
+<text>免责声明：该项目信息有项目方提供，最终以工商局登记备案为准，请谨慎核查</text>
+</view>
+
+<view style="height:120rpx"></view>
+<!-- 底部 -->
+<view class="ly_foot">
+  <navigator url="../leaveword/leaveword?bid={{brandInfo.Id}}">
+    <view class="wy_ly">
+      <image src="../image/brand/message.png"></image>
+      <text>我要留言</text>
+    </view>
+  </navigator>
+  <view class="zx_zx" bindtap="ShowTelModal">
+    <image src="../image/brand/call.png"></image>
+    <text>免费回呼</text>
+  </view>
+  <view class="clear"></view>
+</view>

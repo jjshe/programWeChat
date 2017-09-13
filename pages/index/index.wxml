@@ -1,0 +1,85 @@
+<!--首页-->
+<scroll-view scroll-y="true" style="height:{{scrollHeight}}px;" bindscrolltolower="loadMore">
+
+  <!--轮播图-->
+  <swiper class="lunbo" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{lunboList}}" wx:key="lunbo">
+      <swiper-item>
+        <navigator url="../detail/detail?bid={{item.title_two}}">
+          <image src="{{item.img_url}}" class="slide-image" />
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!-- 分类列表 -->
+  <view class="class_list">
+    <navigator url="../industry/industry?cid=15">
+      <image src="../image/industry/canyin.png"></image>
+      <text>餐饮</text>
+    </navigator>
+    <navigator url="../industry/industry?cid=9">
+      <image src="../image/industry/fuzhuang.png"></image>
+      <text>服装</text>
+    </navigator>
+    <navigator url="../industry/industry?cid=10">
+      <image src="../image/industry/muying.png"></image>
+      <text>婴幼教育</text>
+    </navigator>
+    <navigator url="../industry/industry?cid=11">
+      <image src="../image/industry/jiaju.png"></image>
+      <text>居家</text>
+    </navigator>
+    <navigator url="../industry/industry?cid=99">
+      <image src="../image/industry/syb.png"></image>
+      <text>网络</text>
+    </navigator>
+    <navigator url="../industry/industry?cid=12">
+      <image src="../image/industry/huli.png"></image>
+      <text>个护化妆</text>
+    </navigator>
+    <navigator url="../industry/industry?cid=17">
+      <image src="../image/industry/jiaoyu.png"></image>
+      <text>教育文具</text>
+    </navigator>
+    <navigator url="../industry/industry?cid=14">
+      <image src="../image/industry/jiadian.png"></image>
+      <text>家电数码</text>
+    </navigator>
+    <navigator url="../industry/industry?cid=16">
+      <image src="../image/industry/shenghuo.png"></image>
+      <text>美容养生</text>
+    </navigator>
+    <navigator url="../industry/industry?cid=13">
+      <image src="../image/industry/qiche.png"></image>
+      <text>汽车配件</text>
+    </navigator>
+    <view class="clear"></view>
+  </view>
+
+
+  <!--列表-->
+  <view wx:for="{{brandList}}" wx:key="brand" class="con_list">
+    <navigator url="../detail/detail?bid={{item.BrandId}}">
+      <image src="{{item.SearchImg}}" class="slide-image" class="con_img" />
+      <view class="con_con">
+        <text class="c_name">{{item.BrandName}}</text>
+        <view class="yz_img">
+          <image src="../image/brandproperty/renzheng.png"></image>
+          <image class="hongbao_{{item.HaveHongbao}}" src="../image/brandproperty/hongbao.png"></image>
+          <image class="fanxian_{{item.HaveFanxian}}" src="../image/brandproperty/fanxian.png"></image>
+          <image class="refund_{{item.HaveRefund}}" src="../image/brandproperty/refund.png"></image>
+        </view>
+        <view class="clear"></view>
+        <text class="c_money">{{item.MiniAppsBrandInvest}}</text>
+        <text class="c_sum">{{item.BrandSummary}}</text>
+      </view>
+      <view class="clear"></view>
+    </navigator>
+  </view>
+  <view class="tips1">
+    <view wx:if="{{hasMore}}" style="display: flex;flex-direction: row;align-items: center;align-self: center;justify-content: center;">
+      <icon type="waiting" size="25" /><text>正在加载...</text></view>
+    <view wx:else><text>没有更多内容了</text></view>
+  </view>
+</scroll-view>

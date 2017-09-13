@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/search/search",
+    "pages/discover/discover",
+    "pages/industry/industry",
+    "pages/detail/detail",
+    "pages/leaveword/leaveword",
+    "pages/searchresult/searchresult"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#df2e30",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "pages/image/foot/home1.png",
+        "iconPath": "pages/image/foot/home.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "pages/image/foot/search1.png",
+        "iconPath": "pages/image/foot/search.png",
+        "pagePath": "pages/search/search",
+        "text": "搜索"
+      },
+      {
+        "selectedIconPath": "pages/image/foot/discover1.png",
+        "iconPath": "pages/image/foot/discover.png",
+        "pagePath": "pages/discover/discover",
+        "text": "发现"
+      }
+    ]
+  }
+}

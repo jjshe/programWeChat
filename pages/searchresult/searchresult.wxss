@@ -1,0 +1,20 @@
+page{background: #f0f0f0;}
+
+.search_z{position: relative;}
+.search_s input{margin: 20rpx;background: #fff;line-height: 60rpx;font-size: 26rpx;border-radius: 10rpx;height: 60rpx;padding: 0 20rpx;width: 600rpx;}
+.search_t image{width: 30rpx;height: 30rpx;position: absolute;top: 15rpx;right: 30rpx;z-index: 999;}
+
+.rm_search{background: #fff;margin-bottom: 20rpx;}
+.rm_search .rm_top{border-bottom: 2rpx solid #dedede;line-height: 90rpx;padding: 0 30rpx;}
+.rm_search .rm_top image{width: 40rpx;height: 40rpx;}
+.rm_search .rm_top text{margin-left: 10rpx;font-size: 30rpx;display: inline-block}
+.rm_search .rm_list{padding: 0 20rpx;line-height: 60rpx;background: #f0f0f0;font-size: 28rpx;text-align: center;display: inline-block;margin: 10rpx;border-radius: 10rpx;}
+
+.tj_top{border-bottom: 2rpx solid #dedede;line-height: 90rpx;padding: 0 30rpx;background: #fff;}
+.tj_top image{width: 40rpx;height: 40rpx;}
+.tj_top text{margin-left: 10rpx;font-size: 30rpx;display: inline-block}
+
+.rocket{background: #fff;margin-bottom: 20rpx;padding: 120rpx 0;text-align: center;}
+.rocket image{width: 280rpx;height: 280rpx;}
+.rocket text{line-height: 60rpx;font-size: 28rpx;color: #999;display: block;}
+.meiyou{width: 750rpx; display:inline-block; line-height: 90rpx;text-align: center;font-size: 35rpx;}

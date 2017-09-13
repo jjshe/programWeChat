@@ -1,0 +1,44 @@
+<view class="con_list">
+  <image src="{{brandInfo.SearchImg}}" class="slide-image" class="con_img" />
+  <view class="con_con">
+    <text class="c_name">{{brandInfo.BrandName}}</text>
+    <view class="yz_img">
+      <image src="../image/brandproperty/renzheng.png"></image>
+      <image class="hongbao_{{brandInfo.HaveHongbao}}" src="../image/brandproperty/hongbao.png"></image>
+      <image class="fanxian_{{brandInfo.HaveFanxian}}" src="../image/brandproperty/fanxian.png"></image>
+      <image class="refund_{{brandInfo.HaveRefund}}" src="../image/brandproperty/refund.png"></image>
+    </view>
+    <view class="clear"></view>
+    <text class="c_money">{{brandInfo.MiniAppsBrandInvest}}</text>
+    <text class="c_sum">{{brandInfo.BrandSummary}}</text>
+  </view>
+  <view class="clear"></view>
+</view>
+
+<!-- 表单 -->
+<view class="ly_form">
+  <form bindsubmit="SubForm">
+    <view class="ly_list">
+      <text>姓名：</text>
+      <input name="user_name" placeholder="请输入您的姓名（必填）" />
+      <view class="clear"></view>
+    </view>
+    <view class="ly_list">
+      <text>手机号：</text>
+      <input type="number" name="user_mobile" placeholder="请输入您的手机号（必填）" />
+      <view class="clear"></view>
+    </view>
+    <view class="ly_list">
+      <text>留言：</text>
+      <input name="user_ly" placeholder="请输入您的留言内容（必填）" />
+      <view class="clear"></view>
+    </view>
+    <view class="button">
+      <button form-type="submit">提交</button>
+    </view>
+  </form>
+</view>
+
+<!-- <loading hidden="{{submitHidden}}">
+  正在提交...
+</loading> -->
